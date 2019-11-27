@@ -87,7 +87,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 		case "Sofort":
 			logger.info("Choosing Sofort..");
-			WebDriverUtils.scroll350Down(driver, sofortBtn);
+			WebDriverUtils.scrollLittDown(driver, sofortBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, sofortBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;

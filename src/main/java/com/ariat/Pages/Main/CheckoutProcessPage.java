@@ -62,6 +62,14 @@ public class CheckoutProcessPage extends BasePage {
 	private By confirmPayPal = By.id("confirmButtonTop");
 	private By nextBtnPayPal = By.id("btnNext");
 	private By loginPayPal = By.id("btnLogin");
+	 private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
+		
+		private By addressLocator = By.xpath("//span[contains(text(), '1el1r - Basarabia Blvd, No 62')]");
+		
+		public void selectAddress() {
+			WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
+			WebDriverUtils.clickOnElementWithWait(driver, addressLocator);
+		}
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
