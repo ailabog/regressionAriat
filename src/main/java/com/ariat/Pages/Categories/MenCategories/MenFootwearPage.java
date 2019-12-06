@@ -30,7 +30,6 @@ public class MenFootwearPage extends BasePage{
     private By menCasualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFootwearWorkCategory = By.linkText("Work");
     private By menFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    
     private By footwearRidingCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By footwearCountryCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By footwearWesternCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");

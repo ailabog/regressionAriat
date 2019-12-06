@@ -24,7 +24,6 @@ public class MenCountryPage extends BasePage{
 	private By rubberCountryCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/ul/li[2]/a");
 	private By outdoorCountryCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/ul/li[3]/a");
 	private By walkingCountryCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/ul/li[4]/a");
-		
 	private By tallBootsCountryCategoryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By rubberCountryCategoryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By outdoorCountryCategoryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");

@@ -24,21 +24,17 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenCategoryPage extends BasePage {
 
-	private By womenFootwearCategory = By.xpath("//a[@class='global-nav-level-2-label ']");
-	private By womenFootwearCategoryDE = By.linkText("Schuhe");
 	
+	private By womenFootwearCategoryDE = By.linkText("Schuhe");
 	private By womenFootwearCategoryFR = By.linkText("Bottes et boots");
 	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");
-
-	private By womenClothingText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");	private By womenClothingText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccesoriesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[3]/li/a");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFeaturedCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/a");
 	private By womenFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By womenFootwearCategoryLeftNav = By.linkText("Footwear");
-	
 	private By leftnavClothing = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -63,14 +59,12 @@ public class WomenCategoryPage extends BasePage {
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
 	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
-	
 	private By womenAccesoriesCategoryLefytNavDE= By.linkText("Accessoires");
 	private By womenAccesoriesCategoryLefytNavFR= By.linkText("Accessoires");
 	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
 	private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	
 	private By garmentBagProduct = By.xpath("//*[@id=\"6637647889b5b1522cd5df99b6\"]/div[1]/a/picture/img");
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 

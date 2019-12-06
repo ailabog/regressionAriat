@@ -2,7 +2,7 @@ package com.ariat.Tests.Base;
 
 
 import org.testng.annotations.Test;
-import com.ariat.Utils.KillBill;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -16,7 +16,7 @@ import com.ariat.Utils.KillBill;
 public class KillChromeTests {
 	@Test(priority = 0)
 	public void killChrome() {
-		KillBill kill = new KillBill();
+		KillChrome kill = new KillChrome();
 			kill.killChrome();
 		}
 	}

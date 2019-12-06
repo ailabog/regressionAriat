@@ -25,13 +25,11 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenFootwearPage extends BasePage{
 	
-	private By womenFootwearRidingCategory = By.linkText("Riding");
+
 	private By womenFootwearRidingCategoryFR = By.linkText("Equitation");
-	
 	private By womenFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearCountryCategory = By.linkText("Country");
 	private By womenFootwearCountryCategoryFR = By.linkText("Campagne");
-	
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");

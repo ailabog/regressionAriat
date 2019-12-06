@@ -35,14 +35,10 @@ public class MenCategoryPage extends BasePage{
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
     private By menFeaturedCategoryFR = By.xpath("//a[contains(text(),'Featured')])[2]");
-    
-  
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-  
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menCategoryDE = By.xpath("//a[contains(text(),'Herren')]");
-    
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By clothingCategoryLeftNav =By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By accessoriesCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
@@ -57,24 +53,15 @@ public class MenCategoryPage extends BasePage{
     private By westernTextLeftNav = By.xpath("//*[contains(text(),'Western']");
     private By fashionTextLeftNav = By.xpath("//*[contains(text(),'Fashion']");
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
-    
     private By sortDropWomenCategoryUp = By.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span");
-    
-    //.ui-state-hover .icon-arrow-right
-    ////div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span
-    ////div[2]/div/div/h3/p/span
-	private By show36ItemLink = By.linkText("36 Items");
+    private By show36ItemLink = By.linkText("36 Items");
 	private By show72ItemLink = By.linkText("72 Items");
-	
-	private By show36ItemLinkDE = By.linkText("36 Artikel");
+    private By show36ItemLinkDE = By.linkText("36 Artikel");
 	private By show72ItemLinkDE = By.linkText("72 Artikel");
 	private By show108ItemLinkDE = By.xpath("108 Artikel");
-	
 	private By show36ItemLinkFR = By.linkText("36 Articles");
 	private By show72ItemLinkFR = By.linkText("72 Articles");
 	private By show108ItemLinkFR = By.xpath("108 Articles");
-	
-	
 	private By show108ItemLink = By.linkText("108 Items");
 	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
 	private By nextPaginationButtonUp = By.xpath("//a[contains(text(),'Next')]");

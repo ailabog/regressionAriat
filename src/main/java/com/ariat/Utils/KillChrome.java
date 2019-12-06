@@ -2,7 +2,7 @@ package com.ariat.Utils;
 
 import java.io.IOException;
 
-public class KillBill  
+public class KillChrome  
 { 
 	public void killChrome() {
 				 try {

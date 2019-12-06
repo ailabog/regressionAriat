@@ -31,5 +31,4 @@ public class SalesReturnConfirmationPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
-
 }

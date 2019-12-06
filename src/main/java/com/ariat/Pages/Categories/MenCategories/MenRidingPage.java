@@ -53,7 +53,6 @@ public class MenRidingPage extends BasePage {
 	private By menClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By menClothingSweatTshirtAndWoodiesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By menClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-
 	private By accessoriesHeadwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/ul/li[1]/a");
 	private By menAccessoriesHeadwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By accessoriesBagsLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/ul/li[2]/a");

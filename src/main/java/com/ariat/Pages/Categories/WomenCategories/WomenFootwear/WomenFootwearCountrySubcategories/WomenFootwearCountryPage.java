@@ -20,7 +20,6 @@ public class WomenFootwearCountryPage extends BasePage {
 	private By walkingFootwearCountryCategoryleftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[4]/a");
 	private By fashionFootwearCountryCategoryleftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
 	private By rubberFootwearCountryCategoryleftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
-
 	private By tallBootsFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By rubberFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By fashionFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/h1");
