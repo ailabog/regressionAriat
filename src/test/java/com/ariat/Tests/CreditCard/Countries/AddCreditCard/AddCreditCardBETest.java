@@ -42,7 +42,7 @@ public class AddCreditCardBETest extends BaseTest{
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
-	private static final String YEAR = "2023";
+	private static final String YEAR = "2021";
 	private static final String MONTH = "January";
 	
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
@@ -54,54 +54,40 @@ public class AddCreditCardBETest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardBETest() {
+	public void addVisaCreditCardBETest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card Belgium test");
+		logger.info("Starting add Visa credit card Belgium test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL,"EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
-		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
+		addACreditCardPage.setDetailsCreditCard(CARD_ID, CARD_OWNER, typeCard.VISA.getName(), typeCard.VISA.getNumber(), typeCard.VISA.getCvs(), MONTH, YEAR);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card Belgium test");
+		logger.info("Finishing add Visa credit card Belgium test");
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoBETest() {
-		logger.info("Starting add credit card from Payment Info Belgium test");
+	public void addMasterCreditCardBETest() {
+		String expirationDate = "MONTH/YEAR";
+		logger.info("Starting add Master credit card Belgium test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
-		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add credit card from Payment info Belgium test");
-		
-  }
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage.setDetailsCreditCard(CARD_ID, CARD_OWNER, typeCard.MASTER_CARD.getName(), typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs(), MONTH, YEAR);
+		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
+		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
+		logger.info("Finishing add Master credit card Belgium test");
+  } 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

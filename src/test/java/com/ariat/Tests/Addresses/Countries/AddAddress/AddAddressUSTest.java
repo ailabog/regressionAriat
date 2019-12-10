@@ -38,9 +38,10 @@ public class AddAddressUSTest extends BaseTest {
 	private PhoneUS phoneUS;
 	private EUCountries euCountry;
 
+
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
+	public static final String POST_CODE = "90201";
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
@@ -60,18 +61,10 @@ public class AddAddressUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("A");
-		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Avenue, 5th");
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectState("New York");
-		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(phoneUS.phone1.getNumber());
-		addAddressPage.enterAddressId(ADDRESS_ID);
+		addAddressPage.setDetailsAddressUS("A", "B", "Avenue, 5th", CITY, "New York", POST_CODE, phoneUS.phone1.getNumber(), ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address US test");

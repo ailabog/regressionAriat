@@ -68,18 +68,10 @@ public class NegativeAddAddressBETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("444");
-		addAddressPage.enterLName("4444");
-		addAddressPage.enterAddress1(ADDRESS);
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Norway");
-		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(PHONE);
-		addAddressPage.enterAddressId(ADDRESS_ID);
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESS, CITY, "Brussels", POST_CODE, PHONE, ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
 		logger.info("Finishing add negative address NO test");
 	}
@@ -92,18 +84,10 @@ public class NegativeAddAddressBETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("444");
-		addAddressPage.enterLName("4444");
-		addAddressPage.enterAddress1(ADDRESSWILD);
-		addAddressPage.enterCity(CITYWILD);
-		addAddressPage.selectCountry("Norway");
-		addAddressPage.enterPostCode(POST_CODEWILD);
-		addAddressPage.enterPhone(PHONEWILD);
-		addAddressPage.enterAddressId(ADDRESS_IDWILD);
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESSWILD, CITYWILD, "Brussels", POST_CODEWILD, PHONEWILD, ADDRESS_IDWILD);
 		addressesPage = addAddressPage.returnAddressesPage();
 		logger.info("Finishing add negative address NO test");
 	}
@@ -116,13 +100,10 @@ public class NegativeAddAddressBETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterAddress1(ADDRESS);
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Norway");
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESSWILD, CITYWILD, "Brussels", null, null, null);
 		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address NO test");
 	}

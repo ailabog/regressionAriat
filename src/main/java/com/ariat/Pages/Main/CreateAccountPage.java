@@ -39,7 +39,6 @@ public class CreateAccountPage extends BasePage {
 	private By checkEnglish = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[1]/span");
 	private By checkOutdoor = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[2]/span");
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
-	//private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By createAccountButton=By.name("dwfrm_profile_confirm");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
 	private By emailMsgDE = By.xpath("//span[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
@@ -47,8 +46,6 @@ public class CreateAccountPage extends BasePage {
 	private By invalidConfirmEmailMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[7]/div/span");
 	private By invalidPassMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[8]/div/span");
 	private By invalidConfirmMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[9]/div/span");
-
-	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	private By emailMsgTxt = By.xpath("//span[text()='The email address is invalid.']");
@@ -67,46 +64,77 @@ public class CreateAccountPage extends BasePage {
 		assertEquals(missing, missingValue, "This field is required.");
 	}
 
-	public void firstName(String firstName) {
-		logger.info("Start collecting information to create a new account: First Name");
+	public void createAccount(String firstName, String lastName, String month, String day, String email, String cnfEmail, String password, String cnfPassword) {
+		logger.info("Start collecting information to create a new account: First Name, Last name, Birth month, Birth day, Email, Password");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-		
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthMonth, month);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthDay, day);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, confirmEmailTextBox);
+		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);	
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
+	}
+	
+	public void firstName(String firstName) {
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
+}
+	
+	public void enterLastName(String lastName) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, firstNameTextBox, lastName);
+	}
+	
+	public void lastName(String lastName) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
+	}
+	
+	public void selectBirthMonth(String month) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthMonth, month);
+	}
+	
+	public void selectBirthDay(String day) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthDay, day);
+	}
+	
+	public void enterEmail(String email) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, emailTextBox, email);
 	}
 
+	
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
 		
 	}
 
-	public void lastNameInfo(String lastName) {
-		logger.info("Start collecting information to create a new account: Last Name");
-		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
-		
+	public void clearFNameLastNameEmail() {
+		WebDriverUtils.clearElement(driver, lastNameTextBox);
+		WebDriverUtils.clearElement(driver, lastNameTextBox);
+		WebDriverUtils.clearElement(driver, emailTextBox);
 	}
+	
 
 	public void clearLastName() {
 		logger.info("Clearing text box Last Name:");
 		WebDriverUtils.clearElement(driver, lastNameTextBox);
 	}
 
-	public void selectBirthMonth(String month) {
-		logger.info("Start collecting information to create a new account: Month of birth");
-		WebDriverUtils.selectDropDown(driver, birthMonth, month);
 	
-	}
-
-	public void selectBirthDay(String day) {
-		logger.info("Start collecting information to create a new account: Day of birth");
-		WebDriverUtils.selectDropDown(driver, birthDay, day);
-		
-	}
-
-	public void enterEmail(String email) {
-		logger.info("Start collecting information to create a new account: enter email");
-		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
-		
-	}
 
 	public void clearEmail() {
 		logger.info("Clearing text box Email:");

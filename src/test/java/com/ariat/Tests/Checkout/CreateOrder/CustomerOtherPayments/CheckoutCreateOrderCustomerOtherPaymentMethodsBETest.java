@@ -68,8 +68,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUK", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageBE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -104,8 +103,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUK", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageBE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();

@@ -4,10 +4,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageNL;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddAddressesPage;
@@ -17,8 +17,9 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
+
 /**
- * Adds negative address and checks the address was created for Netherlands
+ * Adds negative address and checks the address was created for Belgium
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -60,70 +61,51 @@ public class NegativeAddAddressNLTest extends BaseTest {
 	}
 
 	@Test(priority=0)
-	public void negativeAddAddressNLTest() {
-		logger.info("Starting add negative addressNL test");
+	public void negativeAddAddressNOTest() {
+		logger.info("Starting add negative address NO test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
 		signInPage = homePageNL.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("444");
-		addAddressPage.enterLName("B4444");
-		addAddressPage.enterAddress1(ADDRESS);
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Netherlands");
-		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(PHONE);
-		addAddressPage.enterAddressId(ADDRESS_ID);
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESS, CITY, "Brussels", POST_CODE, PHONE, ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
-		logger.info("Finishing add negative address NL test");
+		logger.info("Finishing add negative address NO test");
 	}
 	
 	@Test(priority=1)
-	public void negativeAddAddressNLTestWildcards() {
-		logger.info("Starting add negative address NL test");
+	public void negativeAddAddressNOTestWildcards() {
+		logger.info("Starting add negative address NO test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
 		signInPage = homePageNL.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("444");
-		addAddressPage.enterLName("B4444");
-		addAddressPage.enterAddress1(ADDRESSWILD);
-		addAddressPage.enterCity(CITYWILD);
-		addAddressPage.selectCountry("Netherlands");
-		addAddressPage.enterPostCode(POST_CODEWILD);
-		addAddressPage.enterPhone(PHONEWILD);
-		addAddressPage.enterAddressId(ADDRESS_IDWILD);
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESSWILD, CITYWILD, "Brussels", POST_CODEWILD, PHONEWILD, ADDRESS_IDWILD);
 		addressesPage = addAddressPage.returnAddressesPage();
-		logger.info("Finishing add negative address NL test");
+		logger.info("Finishing add negative address NO test");
 	}
 	
 	@Test(priority=2)
-	public void negativeAddAddressNLTestMissingValues() {
-		logger.info("Starting add negative address NL test");
+	public void negativeAddAddressNOTestMissingValues() {
+		logger.info("Starting add negative address NO test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
 		signInPage = homePageNL.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterAddress1(ADDRESS);
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Netherlands");
+		addAddressPage.setDetailsAddress("444", "4444", ADDRESSWILD, CITYWILD, "Brussels", null, null, null);
 		addAddressPage.saveAddress();
-		logger.info("Finishing add negative address NL test");
+		logger.info("Finishing add negative address NO test");
 	}
 	
 	@AfterTest

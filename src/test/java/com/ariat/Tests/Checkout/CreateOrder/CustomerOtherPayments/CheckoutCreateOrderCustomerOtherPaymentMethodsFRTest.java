@@ -68,8 +68,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsFRTest extends BaseTe
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "Francais");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "Francais", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();

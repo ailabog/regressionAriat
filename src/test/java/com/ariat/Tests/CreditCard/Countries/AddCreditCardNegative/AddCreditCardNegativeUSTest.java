@@ -59,17 +59,10 @@ public class AddCreditCardNegativeUSTest extends BaseTest{
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCardUS(typeCard.INVALID_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
+		addACreditCardPage.setDetailsCreditCardUS(CARD_ID, CARD_OWNER, typeCard.VISA.getNumber(), typeCard.VISA.getCvs(), MONTH, YEAR);
 		addACreditCardPage.applyCardCreation();
 		logger.info("Finishing add a credit card negative US test");
   } 
@@ -81,5 +74,5 @@ public class AddCreditCardNegativeUSTest extends BaseTest{
 		signInPage.quit();
 		addACreditCardPage.quit();
 		myAccountPage.quit();
-		}
+	}
 }

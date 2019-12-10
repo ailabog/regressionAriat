@@ -49,6 +49,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
 	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
+	public static final String PASSWORD = "Parola12345!";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
@@ -65,14 +66,13 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Francais");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL_WISHLIST, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriendFR("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
@@ -86,14 +86,13 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Francais");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL_WISHLIST, "Francais", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Bas");
 		myWishListPage.increaseQtyWishList(3);
@@ -112,14 +111,13 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Francais");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL_WISHLIST, "Francais", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
@@ -135,14 +133,13 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Francais");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL_WISHLIST, "Francais", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");

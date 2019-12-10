@@ -42,7 +42,6 @@ public class AddAddressesPage extends BasePage {
 	private By addressesTextFR = By.xpath("//*contains[text(), 'Addresses']");
  	private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
 	private By deleteAddressButtonDE = By.name("dwfrm_profile_address_remove");
-
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
     private By missingFieldsText=By.xpath("//*contains[text(),'This field is required.']");
@@ -52,46 +51,49 @@ public class AddAddressesPage extends BasePage {
 		super(driver);
 	}
 
-	public void enterFName(String name) {
-		logger.info("Entering first name for Address :?");
+	
+	public void setDetailsAddress(String name, String last, String address1, String city, String country, String zip, String phone, String addressId) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, fNameTtextBox, name);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-	}
-
-	public void enterLName(String last) {
-		logger.info("Entering last name for Address :?");
 		WebDriverUtils.enterTextBox(driver, lNameTextBox, last);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-	}
-
-	public void enterAddress1(String address1) {
-		logger.info("Entering address1: ");
 		WebDriverUtils.enterTextBox(driver, address1TextBox, address1);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-	}
-
-	public void enterAddress2(String address2) {
-		logger.info("Entering address2: ");
-		WebDriverUtils.enterTextBox(driver, address2TextBox, address2);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-	}
-
-	public void enterCity(String city) {
-		logger.info("Entering city: ");
 		WebDriverUtils.enterTextBox(driver, cityTextBox, city);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-	}
-
-	public void selectCountry(String country) {
-		logger.info("Selecting country: ");
-		WebDriverUtils.selectDropDown(driver, countryTextBox, country);
+		WebDriverUtils.selectVisibleText(driver, countryTextBox, country);
+		WebDriverUtils.enterTextBox(driver, postCodeTextBox, zip);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, phoneTextBox, phone);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
+
+	}
 	
+	public void setDetailsAddressUS(String name, String last, String address1, String city, String state, String zip, String phone, String addressId) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, fNameTtextBox, name);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, lNameTextBox, last);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, address1TextBox, address1);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, cityTextBox, city);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver,stateBox, state);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, postCodeTextBox, zip);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, phoneTextBox, phone);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
+	}
+	
+	public void enterAddressId(String addressId) {
+		logger.info("Entering poste code: ");
+		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void selectState(String state) {
@@ -101,26 +103,6 @@ public class AddAddressesPage extends BasePage {
 		
 	}
 
-	public void enterPostCode(String zip) {
-		logger.info("Entering poste code: ");
-		WebDriverUtils.enterTextBox(driver, postCodeTextBox, zip);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
-	}
-
-	public void enterPhone(String phone) {
-		logger.info("Entering phone: ");
-		WebDriverUtils.enterTextBox(driver, phoneTextBox, phone);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
-	}
-
-	public void enterAddressId(String addressId) {
-		logger.info("Entering poste code: ");
-		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
-	}
 
 	public void clearAddressId() {
 		logger.info("Clearing text box Address Id:");

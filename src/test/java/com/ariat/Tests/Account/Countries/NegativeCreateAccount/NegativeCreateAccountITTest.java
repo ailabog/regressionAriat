@@ -69,7 +69,7 @@ public class NegativeCreateAccountITTest extends BaseTest {
 		signInPage = homePageIT.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.lastName(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
     	createAccountPage.enterEmail(EMAIL);
@@ -91,7 +91,7 @@ public class NegativeCreateAccountITTest extends BaseTest {
 		signInPage = homePageIT.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME1);
-		createAccountPage.lastNameInfo(LAST_NAME1);
+		createAccountPage.lastName(LAST_NAME1);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
 		createAccountPage.enterEmail(EMAIL1);
@@ -113,7 +113,7 @@ public class NegativeCreateAccountITTest extends BaseTest {
 		signInPage = homePageIT.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.lastName(LAST_NAME);
 		createAccountPage.createAccountClick();
 		createAccountPage.asserCreateAccountMissingValues(missingLoggingValue);
 		logger.info("Finishing negative create account test...");

@@ -53,8 +53,7 @@ public class EmailPreferencesFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Francais");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Francais", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNavFR();
 		emailPreferencesPage.ariatProductsCheck("FASHION");

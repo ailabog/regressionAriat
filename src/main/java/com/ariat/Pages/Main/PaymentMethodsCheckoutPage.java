@@ -22,10 +22,9 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By expirationDateMonth = By.xpath("//span[text()='June']");
 	private By expirationDateMonthFR = By.xpath("//span[text()='Janvier']");
 	private By expirationDateMonthDE = By.xpath("//span[contains(text(),'Februar')]");
-	private By expirationDateMonthUS = By.cssSelector(".el-form > .el-form-item:nth-child(6) .el-select__caret");
 	private By monthExpirationUS = By.xpath("//span[text()='June']");
-	private By expirationDateYear = By.xpath("//span[text()='2024']");
-	private By yearExpirationUS = By.xpath("//span[text()='2025']");
+	private By expirationDateYear = By.xpath("//span[text()='2021']");
+	private By yearExpirationUS = By.xpath("//span[text()='2021']");
 	private By securityCode = By.cssSelector(".checkout__card-cvn .el-input__inner");
 	private By pinTxtBox = By.xpath("//input[@placeholder='Pin']");
 	private By applyGifCard = By.xpath("//button//span[text()='Apply']");
@@ -55,13 +54,14 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
-	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
 	private By placeOrderBtnUS = By.cssSelector("span:nth-child(1) > span");
 	private By payPalDirectBtn = By.xpath("//img[@alt='pp']");
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
+	private By expirationDateMonthUS = By.cssSelector(".el-form-item:nth-child(4) .el-select__caret");
+	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(5) .el-select:nth-child(2) .el-select__caret");
 
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);

@@ -74,7 +74,7 @@ public class ErrorMessagesAccountDETest extends BaseTest {
 		signInPage = homePageDE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.lastName(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
 		//createAccountPage.GenderFemale();
@@ -101,8 +101,7 @@ public class ErrorMessagesAccountDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL, "Deutsch");
-		signInPage.returningPassword(WRONG_PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Deutsch", WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
 		logger.info("Finishing returning customer wrong password test...");
@@ -116,8 +115,7 @@ public class ErrorMessagesAccountDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL, "Deutsch");
-		signInPage.returningPassword(OK_PASSWORD);
+		signInPage.setLoginDetails(WRONG_EMAIL, "Deutsch", OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);
 		logger.info("Finishing returning customer wrong email test...");

@@ -39,20 +39,15 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String BIRTH_MONTH = "March";
 	public static final String BIRTH_DAY = "02";
-
 	public static final String EMAIL = GenerateRandomDataUtils.generateRandomAlphaNumeric(7);
-	
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomNumber(3);
-
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomAlphaNumeric(4);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomString(3);
-
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 	public static final String INVALID_EMAIL_MSG = "The email address is invalid.";
 	public static final String INVALID_PASS_MSG = "(8 - 255 characters)";
 	public static final String MISMATCH_PASS_MSG = "Sorry, this does not match our records. Check your spelling and try again.";
-	
-	public static final String WRONG_EMAIL = "aaaa@yahoo.com";
+		public static final String WRONG_EMAIL = "aaaa@yahoo.com";
 	public static final String OK_EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String WRONG_PASSWORD = "Password";
 	public static final String OK_PASSWORD = "Parola12345!";
@@ -74,7 +69,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		signInPage = homePageBE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.lastName(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
 		createAccountPage.GenderFemale();
@@ -101,8 +96,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL, "EnglishUK");
-		signInPage.returningPassword(WRONG_PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
 		logger.info("Finishing returning customer wrong password test...");
@@ -116,8 +110,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL, "EnglishUK");
-		signInPage.returningPassword(OK_PASSWORD);
+		signInPage.setLoginDetails(WRONG_EMAIL, "EnglishUK", OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);
 		logger.info("Finishing returning customer wrong email test...");

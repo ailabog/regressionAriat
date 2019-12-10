@@ -51,24 +51,23 @@ public class SignInPage extends BasePage {
 	private By closeButton = By.className("close-button");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 
-
 	public SignInPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public void returningCustomer(String email, String language) {
+	public void setLoginDetails(String email, String language, String password) {
 		switch (language) {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			break;
-			
+
 		case "EnglishUS":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		    break;
+			break;
 		case "Deutsch":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
@@ -77,23 +76,22 @@ public class SignInPage extends BasePage {
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				break;
+			break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
 		}
-	}
 
-	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		//WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		//WebDriverUtils.clickOnElementWithWait(driver, loginButton);
 	}
-
+	
 	public void loginClick() {
-		logger.info("Logging into your account...");
-		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		}
+		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
+	}
 
 	public void returningCustomerRememberMe() {
 		logger.info("Remeber me");
@@ -105,13 +103,13 @@ public class SignInPage extends BasePage {
 		logger.info("Forgot password");
 		WebDriverUtils.clickOnElementWithWait(driver, forgotPassword);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		}
+	}
 
 	public void forgotPasswordEmail(String email) {
 		logger.info("This is my email for which I forgot my passowrd:", email);
 		WebDriverUtils.enterTextBox(driver, emailAddressForgot, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		}
+	}
 
 	public void ForgotPasswordSend() {
 		logger.info("Sending my email so the password is reset");
@@ -145,18 +143,16 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		}
+	}
 
 	public void assertErrorMessage(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
 		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
 	}
 
-
 	public void assertMsg(String actualText, String messageExpected) {
 		WebDriverUtils.findText(driver, actualText);
 		assertEquals(actualText, messageExpected, "Message displayed is correct");
-
 	}
 
 	public void assertErrorMessageInexistingOrderNo(String messageExpectedLabel) {
@@ -188,7 +184,7 @@ public class SignInPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}
-	
+
 	public OrderDetailsPage returnOrderDetailsPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
