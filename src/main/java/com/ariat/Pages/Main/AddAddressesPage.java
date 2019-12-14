@@ -24,7 +24,6 @@ public class AddAddressesPage extends BasePage {
 	private By fNameTtextBox = By.id("dwfrm_profile_address_firstname");
 	private By lNameTextBox = By.id("dwfrm_profile_address_lastname");
 	private By address1TextBox = By.id("dwfrm_profile_address_address1");
-	private By address2TextBox = By.id("dwfrm_profile_address_address2");
 	private By cityTextBox = By.id("dwfrm_profile_address_city");
 	private By countryTextBox = By.id("dwfrm_profile_address_country");
 	private By postCodeTextBox = By.id("dwfrm_profile_address_zip");
@@ -68,7 +67,6 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, phoneTextBox, phone);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
-
 	}
 	
 	public void setDetailsAddressUS(String name, String last, String address1, String city, String state, String zip, String phone, String addressId) {
@@ -90,20 +88,6 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
 	}
 	
-	public void enterAddressId(String addressId) {
-		logger.info("Entering poste code: ");
-		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void selectState(String state) {
-		logger.info("Selecting state: ");
-		WebDriverUtils.selectDropDown(driver, stateBox, state);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
-	}
-
-
 	public void clearAddressId() {
 		logger.info("Clearing text box Address Id:");
 		WebDriverUtils.clearElement(driver, addressIdTextBox);
@@ -148,7 +132,6 @@ public class AddAddressesPage extends BasePage {
 		logger.info("Deleteing this address ");
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		
 	}
 	
 	public void saveAddressDE() {
@@ -166,7 +149,6 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		
 	}
-
 
 	public AddressesPage returnAddressesPage() {
 		WebDriverUtils.scroll350Down(driver, saveAddressButton);

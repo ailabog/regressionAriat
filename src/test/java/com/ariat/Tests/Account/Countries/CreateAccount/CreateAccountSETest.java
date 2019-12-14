@@ -120,10 +120,7 @@ public class CreateAccountSETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageSE = (HomePageSE) homePage.chooseEULocation(euCountry.SE, euCountry.SE.getCurrencyISO());
 		signInPage = homePageSE.returnSignInPage();
-		signInPage.forgotPasswordClick();
 		signInPage.forgotPasswordEmail(EMAIL);
-		signInPage.ForgotPasswordSend();
-		signInPage.closeForgotPassword();
 		logger.info("Finishing forgot password test...");
 	}
 	

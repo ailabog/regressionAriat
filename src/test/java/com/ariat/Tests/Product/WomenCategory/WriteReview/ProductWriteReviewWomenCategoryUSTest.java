@@ -80,7 +80,7 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
+		//womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
 		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
 		rebarTopProductPage.writeReviewClick();
 		rebarTopProductPage.writeReviewContent(TITLE_REVIEW, TITLE_REVIEW);

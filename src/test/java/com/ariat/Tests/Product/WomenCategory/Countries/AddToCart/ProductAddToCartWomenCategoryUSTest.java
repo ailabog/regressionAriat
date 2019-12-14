@@ -58,6 +58,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		menAccessoriesBagsPage = menAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
 		bagsProductPage = menAccessoriesBagsPage.returnBagsProductPage();
 		myBagPage = bagsProductPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Men Category Bags add to cart test.");
 	}
     

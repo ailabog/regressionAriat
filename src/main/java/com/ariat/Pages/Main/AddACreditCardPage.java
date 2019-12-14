@@ -24,14 +24,12 @@ public class AddACreditCardPage extends BasePage {
 	private By nameOnTheCardTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_owner");
 	private By typeCardSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_type");
 	private By cardNoTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_number");
-	private By cardNoTextBoxUS = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_owner");
 	private By expirationMonthSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_expiration_month");
 	private By expirationYearSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_expiration_year");
 	private By securityCodeText = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_cvn");
 	private By applyButton = By.id("applyBtn");
 	private By cancelButton = By.xpath("//button[text()='Cancel]");
 	private By creditCardInfoText = By.xpath("//*contains[text(), 'Credit card information']");
-	private By typeCardSelectUS = By.id("c-ct");
 	private By cardNoUS = By.xpath("//input[@id='c-cardnumber']");
 
 	public AddACreditCardPage(WebDriver driver) {
@@ -75,19 +73,6 @@ public class AddACreditCardPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, expirationYearSelect, year);
 }
-	
-	public void selectTypeCardUS(String type) {
-		logger.info("Selecting the type of the card...");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, typeCardSelectUS, type);
-	}
-
-	
-	public void enterCardNoUS(String number) {
-		logger.info("Selecting the type of the card...");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, cardNoTextBoxUS, number);
-	}
 	
 	public void applyCardCreation() {
 		logger.info("Creating new credit card");

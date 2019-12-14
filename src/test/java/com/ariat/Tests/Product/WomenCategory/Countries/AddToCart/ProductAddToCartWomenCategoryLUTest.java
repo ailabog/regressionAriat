@@ -62,8 +62,9 @@ public class ProductAddToCartWomenCategoryLUTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -80,6 +81,7 @@ public class ProductAddToCartWomenCategoryLUTest extends BaseTest {
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
 		casualProductShoePage.selectAttributeSize("36");
 		myBagPage = casualProductShoePage.returnMyBagPage();
+		myBagPage.removeProduct();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -98,6 +100,7 @@ public class ProductAddToCartWomenCategoryLUTest extends BaseTest {
 		productPage.selectAttributeCalf("Extra Slim");
 		productPage.selectAttributeHeight("Medium");
 		myBagPage = productPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

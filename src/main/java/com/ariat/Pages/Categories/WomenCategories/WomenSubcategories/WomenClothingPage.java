@@ -40,7 +40,7 @@ public class WomenClothingPage extends BasePage{
 	private By breechText = By.xpath("//*contains[text(),'Whipstitch Knee Patch Breech']");
 	private By breechProduct = By.cssSelector("#d4131ac676fae12f026a30c6aa .psd-4-full-width-video-module-1__image");
 	private By breechesAndTightsCategory = By.linkText("Breeches & Tights");
-	private By breechesAndTightsCategoryDE = By.linkText("Schränken Sie Ihre Suche ein");
+	private By breechesAndTightsCategoryDE = By.linkText("Schrunken Sie Ihre Suche ein");
 	 
 	public WomenClothingPage(WebDriver driver) {
 		super(driver);

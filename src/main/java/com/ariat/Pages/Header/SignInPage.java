@@ -99,28 +99,16 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void forgotPasswordClick() {
-		logger.info("Forgot password");
-		WebDriverUtils.clickOnElementWithWait(driver, forgotPassword);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
 	public void forgotPasswordEmail(String email) {
 		logger.info("This is my email for which I forgot my passowrd:", email);
+		WebDriverUtils.clickOnElementWithWait(driver, forgotPassword);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, emailAddressForgot, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void ForgotPasswordSend() {
-		logger.info("Sending my email so the password is reset");
 		WebDriverUtils.clickOnElementWithWait(driver, sendForgotButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void closeForgotPassword() {
-		logger.info("Closing the forgot password dialog");
-		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
 	}
 
 	public void closeForgot() {

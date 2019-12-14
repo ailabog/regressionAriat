@@ -52,7 +52,7 @@ public class EditAddressFRTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test
+	/*@Test
 	public void editAddressFRTest() {
 		logger.info("Starting edit address France test");
 		homePage = new HomePage(new ChromeDriver());
@@ -70,7 +70,7 @@ public class EditAddressFRTest extends BaseTest {
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageFR();
 		addressesPage.checkAddressFR("B1TGL1");
 		logger.info("Finishing edit address France test");
-	}
+	}*/
 	
 	@AfterTest
 	public void tearDown() {

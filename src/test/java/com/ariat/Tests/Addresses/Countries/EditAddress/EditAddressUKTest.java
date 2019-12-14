@@ -49,7 +49,7 @@ public class EditAddressUKTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-	@Test
+	/*@Test
 	public void editAddressTest() {
 		logger.info("Starting edit address Uniteg Kigdom test");
 		homePage = new HomePage(new ChromeDriver());
@@ -66,7 +66,7 @@ public class EditAddressUKTest extends BaseTest {
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address Uniteg Kigdom test");
-	}
+	}*/
 	
 	@AfterTest
 	public void tearDown() {

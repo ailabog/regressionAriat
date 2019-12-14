@@ -61,7 +61,7 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void errorsAccountTest() {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
@@ -87,7 +87,7 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongPassCreateAccount(INVALID_PASS_MSG, INVALID_PASS_MSG);
 		logger.info("Finishing error messages in creating new account test...");
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void returningCustomerWrongPasswordTest() {

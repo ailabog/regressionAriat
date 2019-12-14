@@ -51,8 +51,8 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String ADDRESS1 = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = "Frankfurt";
-	public static final String COUNTRY = "Deutschland";
+	public static final String CITY = "Paris";
+	public static final String COUNTRY = "Belgique";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
@@ -81,16 +81,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("France");
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutFrance(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
 		paymentMethodsCheckoutPage.reviewOrder();

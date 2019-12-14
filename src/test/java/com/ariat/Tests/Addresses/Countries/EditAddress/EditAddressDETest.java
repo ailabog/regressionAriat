@@ -52,7 +52,7 @@ public class EditAddressDETest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test
+	/*@Test
 	public void editAddressDETest() {
 		logger.info("Starting edit address Deutschland test");
 		homePage = new HomePage(new ChromeDriver());
@@ -70,7 +70,7 @@ public class EditAddressDETest extends BaseTest {
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageDE();
 		addressesPage.checkAddressDE("235432A");
 		logger.info("Finishing edit address Deutschland test");
-	}
+	}*/
 	
 	@AfterTest
 	public void tearDown() {

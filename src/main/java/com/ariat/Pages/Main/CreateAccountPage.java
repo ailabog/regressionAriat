@@ -84,38 +84,6 @@ public class CreateAccountPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
 	}
-	
-	public void firstName(String firstName) {
-	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-}
-	
-	public void enterLastName(String lastName) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, firstNameTextBox, lastName);
-	}
-	
-	public void lastName(String lastName) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
-	}
-	
-	public void selectBirthMonth(String month) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, birthMonth, month);
-	}
-	
-	public void selectBirthDay(String day) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, birthDay, day);
-	}
-	
-	public void enterEmail(String email) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, emailTextBox, email);
-	}
-
-	
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
@@ -128,13 +96,10 @@ public class CreateAccountPage extends BasePage {
 		WebDriverUtils.clearElement(driver, emailTextBox);
 	}
 	
-
 	public void clearLastName() {
 		logger.info("Clearing text box Last Name:");
 		WebDriverUtils.clearElement(driver, lastNameTextBox);
 	}
-
-	
 
 	public void clearEmail() {
 		logger.info("Clearing text box Email:");
@@ -167,8 +132,6 @@ public class CreateAccountPage extends BasePage {
 		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
 	}
 	
-	
-	
 	public void assertWrongEmailCreateAccountDE(String emailMsgExpected) {
 		String emailMessage = WebDriverUtils.getElementText(driver, emailMsgDE);
 		assertEquals(emailMessage, emailMsgExpected, "Invalid email message is displayed");
@@ -193,13 +156,6 @@ public class CreateAccountPage extends BasePage {
 		
 	}
 
-	public void confirmPassword(String password) {
-		logger.info("Start collecting information to create a new account: confirm email");
-		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
-		logger.info("Finalize collecting information to create a new account");
-
-	}
-
 	public void GenderFemale() {
 		logger.info("Choosing Female option:");
 		WebDriverUtils.clickOnElementWithWait(driver, FemaleRadio);
@@ -210,13 +166,11 @@ public class CreateAccountPage extends BasePage {
 		logger.info("Choosing Male option:");
 		WebDriverUtils.clickOnElementWithWait(driver, MaleRadio);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	
 	}
 
 	public void rideYes() {
 		logger.info("Choose I ride");
 		WebDriverUtils.clickOnElementWithWait(driver, rideYes);
-		
 	}
 
 	public void rideNo() {

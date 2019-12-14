@@ -91,21 +91,11 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
-	
+		checkoutProcessPage.setInfoAccountSecureCheckoutDeutschland(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		logger.info("Finishing checkout -> create negative order invalid shipping address.");
 	}
 
@@ -120,24 +110,14 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME1);
-		checkoutProcessPage.enterLName(LAST_NAME1);
-		checkoutProcessPage.enterAddress(ADDRESS1);
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterMobile(MOBILE1);
-		checkoutProcessPage.enterEmail(EMAILEXISTENT);
+		checkoutProcessPage.setInfoAccountSecureCheckoutDeutschland(FIRST_NAME1, LAST_NAME1, ADDRESS, CITY, ZIP_CODE1, MOBILE1, EMAILEXISTENT);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
 		paymentMethodsCheckoutPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
-	
-		
 		paymentMethodsCheckoutPage.selectTypeCardMasterCard();
 		paymentMethodsCheckoutPage.selectExpirationMonth();
 		paymentMethodsCheckoutPage.selectExpirationYear();

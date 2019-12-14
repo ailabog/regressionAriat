@@ -79,8 +79,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
@@ -103,8 +102,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
@@ -127,8 +125,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.AMERICAN_EXPRESS.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");

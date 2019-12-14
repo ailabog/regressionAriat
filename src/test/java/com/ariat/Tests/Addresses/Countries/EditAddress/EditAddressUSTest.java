@@ -51,7 +51,7 @@ public class EditAddressUSTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test
+	/*@Test
 	public void editAddressUSTest() {
 		logger.info("Starting edit address US test");
 		homePage = new HomePage(new ChromeDriver());
@@ -69,7 +69,7 @@ public class EditAddressUSTest extends BaseTest {
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		//addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address US test");
-	}
+	}*/
 	
 	@AfterTest
 	public void tearDown() {

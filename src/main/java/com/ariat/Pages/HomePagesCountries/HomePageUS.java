@@ -6,16 +6,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
@@ -102,15 +99,8 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
-
-	private By topsAndTshirtsCategory = By
-			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
-	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-
-	//private By garmentBagProduct = By.xpath("//img[contains(@title, 'Ariat Team Garment Bag')]");
 	private By garmentBagProduct = By.cssSelector("#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image");
-	//css=#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image 
-	//xpath=//img[@alt='Ariat Team Garment Bag']
+	
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 
 	public HomePageUS(WebDriver driver) {
@@ -454,14 +444,6 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
 		return new WomenAccessoriesPage(driver);
-	}
-
-	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPage() {
-		WebDriverUtils.moveToElement(driver, womenCategory);
-		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
-		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 
 	

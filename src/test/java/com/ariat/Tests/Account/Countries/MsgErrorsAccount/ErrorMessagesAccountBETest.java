@@ -59,7 +59,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void errorsAccountTest() {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
@@ -68,6 +68,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		signInPage = homePageBE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, n, null, null);
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastName(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
@@ -86,7 +87,7 @@ public class ErrorMessagesAccountBETest extends BaseTest {
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongPassCreateAccount(INVALID_PASS_MSG, INVALID_PASS_MSG);
 		logger.info("Finishing error messages in creating new account test...");
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void returningCustomerWrongPasswordTest() {
