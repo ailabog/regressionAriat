@@ -23,10 +23,8 @@ public class AddressesPage extends BasePage {
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//h1[text()='Adressen']");
 	private By editLink = By.xpath("//a[@class='address-action address-action--edit']");
-		
 	private By deleteLink = By.xpath("//a[@title='Delete']");
 	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
-
 	private By deleteLinkFR = By.xpath("//a[@title='Supprimer']");
 	private By makeDefaultLink = By.xpath("//u[text()='Make default']");
 	private By makeDefaultLinkDE = By.xpath("//a[text()='Als Standard festlegen']");
@@ -38,14 +36,12 @@ public class AddressesPage extends BasePage {
 	private By cancelButtonDialogFR = By.xpath("//span[text()='Annuler']");
 	private By deleteButtonDialogFR = By.xpath("//span[text()='Supprimer']");
 	private By deleteButtonDialog = By.xpath("//span[text()='Delete']");
-
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
 	private By loadMoreButton = By.xpath("//button[@title='Load More']");
     private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[@title='Afficher plus']");
-
 	private boolean checkAddress;
 
 	public AddressesPage(WebDriver driver) {
@@ -55,27 +51,21 @@ public class AddressesPage extends BasePage {
 	public void deleteFromEdit() {
 		logger.info("Deleting the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, deleteButton);
-	
-
 	}
 
 	public void clickDeleteYes() {
 		logger.info("Deleting the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
-		
-
 	}
 
 	public void clickDeleteNo() {
 		logger.info("Canceling delete the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
-	
 	}
 
 	public void makeDefaultAddress() {
 		logger.info("Making default the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
-	
 	}
 
 	public boolean checkAddress(String addressValue) {
@@ -83,7 +73,6 @@ public class AddressesPage extends BasePage {
 				&& WebDriverUtils.findElement(driver, deleteLink) != null) {
 			logger.info("Address {}" + addressValue
 					+ "was created with success and actions as Edit and Delete can de done");
-
 		}
 		return checkAddress;
 	}
@@ -135,7 +124,6 @@ public class AddressesPage extends BasePage {
 			logger.info("Cancel deleting {}" + addressValue + "was not possible");
 		}
 	}
-
 	
 	public void deleteAddressCreatedNoFR(String addressValue) {
 		if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {

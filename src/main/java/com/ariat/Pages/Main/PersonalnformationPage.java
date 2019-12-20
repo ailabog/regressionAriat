@@ -32,10 +32,20 @@ public class PersonalnformationPage extends BasePage {
 		super(driver);
 	}
 	
-	public void firstName(String firstName) {
+	public void setDetails(String firstName, String lastName, String email, String password) {
 		logger.info("Start collecting information to create a new account: First Name");
 		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-	
+		logger.info("Start collecting information to create a new account: Last Name");
+		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
+		logger.info("Start collecting information to create a new account: enter email");
+		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
+		logger.info("Start collecting information to create a new account: confirm email");
+		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
+		logger.info("Start collecting information to create a new account: enter passsword");
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
+		logger.info("Start collecting information to create a new account: confirm email");
+		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
+		logger.info("Finalize collecting information to create a new account");
 	}
 
 	public void clearFirstName() {
@@ -55,40 +65,14 @@ public class PersonalnformationPage extends BasePage {
 		WebDriverUtils.clearElement(driver, lastNameTextBox);
 	}
 	
-	public void enterEmail(String email) {
-		logger.info("Start collecting information to create a new account: enter email");
-		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
-
-	}
-
 	public void clearEmail() {
 		logger.info("Clearing text box Email:");
 		WebDriverUtils.clearElement(driver, emailTextBox);
 	}
 
-	public void confirmEmail(String email) {
-		logger.info("Start collecting information to create a new account: confirm email");
-		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
-	
-	}
-
-	public void enterPassword(String password) {
-		logger.info("Start collecting information to create a new account: enter passsword");
-		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-
-	}
-
-	public void confirmPassword(String password) {
-		logger.info("Start collecting information to create a new account: confirm email");
-		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
-		logger.info("Finalize collecting information to create a new account");
-	}
-
-	
 	public void saveEdits() {
 		logger.info("Saving the updates for personal informations ");
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-	
 	}
 	
 	public MyAccountPage returnMyAccountPage() {

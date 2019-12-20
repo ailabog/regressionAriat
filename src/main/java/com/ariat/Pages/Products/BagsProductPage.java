@@ -24,15 +24,10 @@ public class BagsProductPage extends BasePage {
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By bonusDialog = By.id("bonus-choose-container product-content");
-
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
-
 	private By increaseQty = By.xpath("//span[text()='+']");
-	// increase qty //css=.quantity-increase
-
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");

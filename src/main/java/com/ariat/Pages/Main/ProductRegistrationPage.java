@@ -34,7 +34,6 @@ public class ProductRegistrationPage extends BasePage {
 	private By stateSelect = By.id("dwfrm_productregistration_shippingaddress_states_state");
 	private By zipCodeTxtBox = By.id("dwfrm_productregistration_shippingaddress_zip");
 	private By phoneTxtBox = By.id("dwfrm_productregistration_shippingaddress_phone");
-	
 	private By saveYourInfoBtn = By.xpath("//*[@id=\"product-registration-form\"]/div[6]/div/div[4]/button");
 	private By passwdBtn = By.xpath("dwfrm_productregistration_password");
 	private By passwdCnfBtn = By.xpath("dwfrm_productregistration_passwordconfirm");

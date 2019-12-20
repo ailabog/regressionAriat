@@ -54,10 +54,7 @@ public class PersonalInformationUKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
 		personalInformationPage.clearEmail();
-		personalInformationPage.enterEmail(NEW_EMAIL);
-		personalInformationPage.confirmEmail(NEW_EMAIL);
-		personalInformationPage.enterPassword(PASSWORD);
-		personalInformationPage.confirmPassword(PASSWORD);
+		personalInformationPage.setDetails(NEW_EMAIL, NEW_EMAIL, PASSWORD, PASSWORD);
 		personalInformationPage.saveEdits();
 		logger.info("Update personal information test ended...");
 	}

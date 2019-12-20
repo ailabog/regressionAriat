@@ -22,20 +22,15 @@ public class CasualShoeProductPage extends BasePage {
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By bonusDialog = By.id("bonus-choose-container product-content");
-
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
-
 	private By selectSize = By.id("va-size");
 	private By selectCalf = By.id("va-calf");
 	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
-	// increase qty //css=.quantity-increase
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
-	// private By writeReview = By.cssSelector(".bv-write-review");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
 	private By starReviewExcellent = By.xpath("//a[@id='bv-radio-rating-5']/span");
 	private By starReviewGood = By.xpath("//a[@id='bv-radio-rating-4']/span");

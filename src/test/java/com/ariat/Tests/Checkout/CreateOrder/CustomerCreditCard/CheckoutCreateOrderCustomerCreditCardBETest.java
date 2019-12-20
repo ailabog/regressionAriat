@@ -51,7 +51,6 @@ public class CheckoutCreateOrderCustomerCreditCardBETest extends BaseTest {
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
 	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
-
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
 

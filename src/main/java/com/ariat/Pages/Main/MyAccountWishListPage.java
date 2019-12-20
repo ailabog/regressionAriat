@@ -23,7 +23,7 @@ public class MyAccountWishListPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(MyAccountWishListPage.class);
 
-	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email address']");
+	
 	private By passwordTextBox = By.id("dwfrm_login_password");
 	private By loginButton = By.name("dwfrm_login_login");
 	private By createAccountNowButton = By.name("dwfrm_login_register");
@@ -70,7 +70,6 @@ public class MyAccountWishListPage extends BasePage {
 			throw new RuntimeException("Language" + language + "not supported");
 		}
 	}
-
 
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);

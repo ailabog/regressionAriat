@@ -23,11 +23,6 @@ public class MyBagPage extends BasePage {
 
 	private By cancelFreeGift = By.xpath("(//button[@type='button'])[12]");
 	private By confirmFreeGift = By.xpath("//button[@value='Select']");
-	private By miniCart = By.xpath("//div[@id='header-main-content']/div/div[5]/div/div[2]/a/span");
-	private By myBagText = By.xpath("//section[@id='app']/main/div/div/div/div/div/div/div/p");
-	private By freeGiftSocks = By.xpath("//img[@title='AriatTEK Performance Socks']");
-	private By checkoutButton = By.xpath("//a[text()='Checkout']");
-	private By continueShoppingButton = By.xpath("//a[contains(text(),'Continue shopping')]");
 	private By bonusDialog = By.id("bonus-product-dialog");
 	private By closeMinicart = By.xpath("//span[@class='icon-close close-minicart']");
 	private By checkoutBtn = By.xpath("//a[@class='checkout minicart-button button large']");
@@ -60,29 +55,6 @@ public class MyBagPage extends BasePage {
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		} else {
 			logger.info("Dialog not able to be displayed");
-		}
-	}
-
-	public void checkMyBagFreeGift() {
-		WebDriverUtils.moveToElement(driver, miniCart);
-		if (WebDriverUtils.findElement(driver, myBagText) != null
-				&& WebDriverUtils.findElement(driver, checkoutBtn) != null
-				&& WebDriverUtils.findElement(driver, freeGiftSocks) != null
-				&& WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
-			logger.info("My bag contains the right elements");
-		} else {
-			logger.info("My bag does not contain the right elements");
-		}
-	}
-
-	public void checkMyBagNoFreeGift() {
-		WebDriverUtils.moveToElement(driver, miniCart);
-		if (WebDriverUtils.findElement(driver, myBagText) != null
-				&& WebDriverUtils.findElement(driver, checkoutButton) != null
-				&& WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
-			logger.info("My bag contains the right elements");
-		} else {
-			logger.info("My bag does not contain the right elements");
 		}
 	}
 

@@ -20,7 +20,6 @@ public class CheckoutProcessPage extends BasePage {
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
-
 	private By selectOption = By.xpath("//li//span[contains(text(), 'Austria')]");
 	private By selectOptionBE = By.xpath("//li//span[contains(text(), 'Belgium')]");
 	private By selectOptionDE = By.xpath("//li//span[contains(text(), 'Deutschland')]");
@@ -44,7 +43,6 @@ public class CheckoutProcessPage extends BasePage {
 	private By buyNowBtn = By.id("confirmpayment");
 	private By checkoutCompleteText = By.xpath("//h1[text()='Checkout Complete']");
 	private By giftCardTxtBox = By.xpath("//input[@placeholder=Gift Card Code']");
-	private By pinTxtBox = By.xpath("//input[@placeholder='Pin']");
 	private By applyGifCard = By.xpath("//button//span[text()='Apply']");
 	private By promoCodeTxtBox = By.xpath("//input[@placeholder='Promo code']");
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
@@ -236,7 +234,6 @@ public class CheckoutProcessPage extends BasePage {
 	WebDriverUtils.enterTextBox(driver, email, emailValue);
 }
 	
-	
 	public void closeWindowAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -382,7 +379,7 @@ public class CheckoutProcessPage extends BasePage {
 	}
 
 	public CheckoutProcessCompletePage returnCheckoutProcessCompletePage() {
-		WebDriverUtils.scroll500Down(driver, buyNowBtn);
+		WebDriverUtils.scroll750Down(driver, buyNowBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));

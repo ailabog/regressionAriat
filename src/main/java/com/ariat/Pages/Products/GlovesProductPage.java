@@ -29,8 +29,6 @@ public class GlovesProductPage extends BasePage{
 	private By selectCalf = By.id("va-calf");
 	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
-	// increase qty //css=.quantity-increase
-
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
@@ -56,7 +54,6 @@ public class GlovesProductPage extends BasePage{
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
     private By updateButton = By.xpath("//button[@value='Update']");
 	private By lengthLocator = By.id("va-length");
-
 	By selectSize = By.id("va-size");
 	By addToBasket = By.cssSelector("#add-to-cart");
 	By bonusDialog = By.id("bonus-choose-container product-content");
@@ -68,7 +65,6 @@ public class GlovesProductPage extends BasePage{
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
 	}
 
 

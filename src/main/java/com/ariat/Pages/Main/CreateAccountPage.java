@@ -25,20 +25,10 @@ public class CreateAccountPage extends BasePage {
 	private By lastNameTextBox = By.id("dwfrm_profile_customer_lastname");
 	private By birthMonth = By.id("dwfrm_profile_customer_customProfile_birthdayMonth");
 	private By birthDay = By.id("dwfrm_profile_customer_customProfile_birthdayDay");
-	private By MaleRadio = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[5]/div/div/div[1]/span");
-	private By FemaleRadio = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[5]/div/div/div[2]/span");
-	private By rideYes = By.xpath("//*[@id=\"RadioRide1\"]");
-	private By rideNo = By.xpath("//*[@id=\"RadioRide0\"]");
 	private By emailTextBox = By.id("dwfrm_profile_customer_email");
 	private By confirmEmailTextBox = By.id("dwfrm_profile_customer_emailconfirm");
 	private By passwordTextBox = By.id("dwfrm_profile_login_password");
 	private By confirmPasswordTextBox = By.id("dwfrm_profile_login_passwordconfirm");
-	private By checkWestern = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[1]/span");
-	private By checkWork = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[1]/div[2]/span");
-	private By checkFashion = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[1]/div[3]/span");
-	private By checkEnglish = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[1]/span");
-	private By checkOutdoor = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[2]/span");
-	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
 	private By createAccountButton=By.name("dwfrm_profile_confirm");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
 	private By emailMsgDE = By.xpath("//span[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
@@ -154,66 +144,6 @@ public class CreateAccountPage extends BasePage {
 		logger.info("Start collecting information to create a new account: enter passsword");
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
 		
-	}
-
-	public void GenderFemale() {
-		logger.info("Choosing Female option:");
-		WebDriverUtils.clickOnElementWithWait(driver, FemaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
-
-	public void GenderMale() {
-		logger.info("Choosing Male option:");
-		WebDriverUtils.clickOnElementWithWait(driver, MaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
-
-	public void rideYes() {
-		logger.info("Choose I ride");
-		WebDriverUtils.clickOnElementWithWait(driver, rideYes);
-	}
-
-	public void rideNo() {
-		logger.info("Choose I don't ride");
-		WebDriverUtils.clickOnElementWithWait(driver, rideNo);
-		
-	}
-
-	public void productsWesternCheck() {
-		logger.info("Check Western products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkWestern);
-	
-	}
-
-	public void productsFashionCheck() {
-		logger.info("Check Fashion products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkFashion);
-
-	}
-
-	public void productsWorkCheck() {
-		logger.info("Check Work products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkWork);
-
-	}
-
-	public void productsEnglishCheck() {
-		logger.info("Check English products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkEnglish);
-	
-	}
-
-	public void productsOutdoorCheck() {
-		logger.info("Check Outdoor products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkOutdoor);
-	
-	}
-
-	public void addMeToAriatEmail() {
-		logger.info("Add me to Ariat email list");
-		WebDriverUtils.clickOnElementWithWait(driver, checkAddToEmailList);
-		
-
 	}
 
 	public void createAccountClick() {

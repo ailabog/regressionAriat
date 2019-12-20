@@ -26,11 +26,9 @@ public class PaymentInformationPage extends BasePage {
 
 
 	private By addACreditCardButton = By.xpath("//a[contains(text(),'Add a Credit Card')]");
-	//css=.address-action--create //xpath=//a[contains(text(),'Add a Credit Card')] xpath=//div[@id='paymentinfo']/div[2]/div/div/div/div[6]/a
 	private By addACreditCardButtonFR = By.xpath("//a[text()='Ajouter une carte de paiement']");
 	private By addACreditCardButtonDE = By.xpath("//a[text()='Eine Kreditkarte hinzufügen']");
 	private By addACreditCardText = By.xpath("//*[contains(text(), 'Add a credit card')]");
-
 	WebElement cardTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]"));
 	private By deleteCardLink = By.xpath("//a[text()='Delete card']");
 	private By makeDefaultCardLink =  By.xpath("//a[text()='Make Default Card']");

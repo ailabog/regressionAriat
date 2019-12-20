@@ -21,7 +21,6 @@ public class MyWishListPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(MyWishListPage.class);
 
 	private By sendToAFriendButton = By.xpath("//a[@title='Send to a Friend']");
-	//private By sendToAFriendButtonDE = By.xpath("//a[@title='An einen Freund schicken']");
 	private By sendToAFriendButtonDE = By.xpath("//a[@title='Meine Wunschliste teilen']");
 	private By sendToAFriendButtonFR = By.xpath("//a[@title='Envoyer à un ami']");
 	private By nameTxtBox = By.id("dwfrm_sendtofriend_friendsname");
