@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Search product Finland test
@@ -55,5 +56,7 @@ public class SearchFITest extends BaseTest {
 		homePage.quit();
 		homePageUK.quit();
 		homePageFI.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

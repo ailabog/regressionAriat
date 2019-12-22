@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
@@ -62,5 +63,7 @@ public class HeaderAndFooterUSTest extends BaseTest{
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

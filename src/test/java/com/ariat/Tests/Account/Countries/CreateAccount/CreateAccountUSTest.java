@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -129,5 +130,7 @@ public class CreateAccountUSTest extends BaseTest {
 		signInPage.quit();
 		createAccountPage.quit();
 		orderDetailsPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

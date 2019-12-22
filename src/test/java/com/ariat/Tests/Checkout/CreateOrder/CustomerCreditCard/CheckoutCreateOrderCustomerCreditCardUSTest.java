@@ -18,6 +18,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Checkout -> Create new order customer credit cards US
@@ -142,5 +143,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutPage.quit();
 		bagsProductPage.quit();
 		myAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

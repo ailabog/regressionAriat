@@ -22,6 +22,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageSE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -81,7 +82,6 @@ public class HomeGlobalCountriesTest extends BaseTest {
 
 		@AfterTest
 	public void tearDown() {
-
 		homePageUK.quit();
 		homePageBE.quit();
 		homePageDE.quit();
@@ -95,5 +95,7 @@ public class HomeGlobalCountriesTest extends BaseTest {
 		homePageIE.quit();
 		homePageDK.quit();
 		homePage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -17,6 +17,7 @@ import com.ariat.Pages.Products.BreechProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category test write review on Glove product
@@ -99,5 +100,7 @@ public class ProductWriteReviewWomenCategoryDETest extends BaseTest {
 		womenAccessoriesGlovesPage.quit();
 		gloveProductPage.quit();
 		breechProductPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

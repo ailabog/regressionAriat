@@ -21,6 +21,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Checkout -> Create new order as customer credit card Belgium
@@ -138,5 +139,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
 		checkoutProcessCompletePage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

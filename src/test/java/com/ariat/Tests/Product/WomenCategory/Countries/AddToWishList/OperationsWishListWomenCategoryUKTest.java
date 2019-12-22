@@ -18,6 +18,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessor
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to wishlist update, edit, set
@@ -146,5 +147,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenClothingTopsAndTshirtsPage.quit();
 		myWishListPage.quit();
 		glovesProductPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

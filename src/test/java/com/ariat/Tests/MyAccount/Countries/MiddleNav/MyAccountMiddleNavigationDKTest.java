@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -149,5 +150,7 @@ public class MyAccountMiddleNavigationDKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

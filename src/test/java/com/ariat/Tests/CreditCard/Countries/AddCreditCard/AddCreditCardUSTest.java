@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.LogoutPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 
@@ -104,5 +105,7 @@ public class AddCreditCardUSTest extends BaseTest{
 		paymentInfoPage.quit();
 		addACreditCardPage.quit();
 		logoutPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -21,6 +21,7 @@ import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Men Category -> Add to Wishlist test
@@ -146,5 +147,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	    bagsProductPage.quit();
 		myWishListPage.quit();
 	   createAccountPage.quit();
+	   KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

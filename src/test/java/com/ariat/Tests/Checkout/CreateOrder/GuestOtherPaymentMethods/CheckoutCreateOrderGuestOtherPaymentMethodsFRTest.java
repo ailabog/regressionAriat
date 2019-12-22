@@ -20,6 +20,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -112,5 +113,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
 		checkoutProcessCompletePage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

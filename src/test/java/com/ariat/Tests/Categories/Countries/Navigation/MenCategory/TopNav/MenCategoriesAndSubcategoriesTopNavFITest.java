@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingPage;
@@ -187,6 +188,7 @@ public class MenCategoriesAndSubcategoriesTopNavFITest extends BaseTest {
 		menFeaturedPage.quit();
 		menFeaturedTeamCollectionPage.quit();
 		menFeaturedVentTekPage.quit();
-		
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

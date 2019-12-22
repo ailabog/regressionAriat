@@ -13,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category test negative write review on Glove product
@@ -68,5 +69,7 @@ public class NegativeProductWriteReviewWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesBagsPage.quit();
 		bagsProductPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

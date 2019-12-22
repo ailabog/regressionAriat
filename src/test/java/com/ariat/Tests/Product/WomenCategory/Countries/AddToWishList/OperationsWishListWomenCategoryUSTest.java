@@ -17,6 +17,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Men Category -> Add to wishlist update, edit, set
@@ -134,5 +135,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		womenAccessoriesBagsPage.quit();
 		bagsProductPage.quit();
 		myWishListPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -17,6 +17,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Checkout -> Create new order
@@ -112,5 +113,7 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		bagsProductPage.quit();
 		myAccountPage.quit();
 		paymentMethodsCheckoutPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

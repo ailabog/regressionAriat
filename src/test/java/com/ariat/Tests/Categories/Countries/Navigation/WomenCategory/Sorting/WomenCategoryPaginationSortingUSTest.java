@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 
 
@@ -70,6 +71,7 @@ public class WomenCategoryPaginationSortingUSTest extends BaseTest {
 		homePageUK.quit();
 		homePageUS.quit();
 		womenCategoryPage.quit();
-		
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

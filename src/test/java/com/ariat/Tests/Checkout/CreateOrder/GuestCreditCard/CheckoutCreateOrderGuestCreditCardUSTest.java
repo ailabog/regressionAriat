@@ -121,7 +121,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
 	
-/*	@AfterTest
+@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -132,5 +132,5 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
     	bagsProductPage.quit();
     	KillChrome kill = new KillChrome();
 		kill.killChrome();
-	}*/
+	}
 }

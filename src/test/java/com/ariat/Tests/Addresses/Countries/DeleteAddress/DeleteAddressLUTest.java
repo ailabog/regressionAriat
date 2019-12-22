@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -96,5 +97,7 @@ public class DeleteAddressLUTest extends BaseTest {
 		myAccountPage.quit();
 		addressesPage.quit();
 		addAddressPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

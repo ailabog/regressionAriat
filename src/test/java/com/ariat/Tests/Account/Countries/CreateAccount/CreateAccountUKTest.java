@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -114,5 +115,7 @@ public class CreateAccountUKTest extends BaseTest {
 		createAccountPage.quit();
 		myAccountPage.quit();
 		orderDetailsPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Search product Deutschland test
@@ -55,5 +56,7 @@ public class SearchDETest extends BaseTest {
 		homePage.quit();
 		homePageUK.quit();
 		homePageDE.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

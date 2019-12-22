@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.MenCategories.MenFashionSneakersPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearPage;
@@ -195,5 +196,7 @@ public class MenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 		menFootwearWorkPullOnPage.quit();
 		menFootwearCasualShoesPage.quit();
 		menFootwearSneakersPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

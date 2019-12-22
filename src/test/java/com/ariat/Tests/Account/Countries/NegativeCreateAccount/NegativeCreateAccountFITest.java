@@ -14,6 +14,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test negative create account by instantiating the browser, go to Home page,
@@ -109,5 +110,7 @@ public class NegativeCreateAccountFITest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		createAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenRidingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFashionSubcategory.WomenFashionSneakersPage;
@@ -173,5 +174,7 @@ public class WomenFootwearSubcategoriesLeftNavFITest extends BaseTest {
 		womenFootwearCasualShoesPage.quit();
 		womenFootwearSneakersPage.quit();
 		womenFootwearCasual.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

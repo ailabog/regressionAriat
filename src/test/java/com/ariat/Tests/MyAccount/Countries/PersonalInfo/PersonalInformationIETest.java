@@ -13,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PersonalnformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -70,5 +71,7 @@ public class PersonalInformationIETest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		personalInformationPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

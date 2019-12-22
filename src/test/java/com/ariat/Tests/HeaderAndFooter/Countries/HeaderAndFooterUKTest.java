@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
@@ -57,5 +58,7 @@ public class HeaderAndFooterUKTest extends BaseTest{
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

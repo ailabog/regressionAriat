@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -74,5 +75,7 @@ public class AddCreditCardNegativeUSTest extends BaseTest{
 		signInPage.quit();
 		addACreditCardPage.quit();
 		myAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

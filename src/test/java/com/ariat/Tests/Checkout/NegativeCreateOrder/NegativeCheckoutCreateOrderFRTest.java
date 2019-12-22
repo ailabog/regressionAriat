@@ -21,6 +21,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Checkout -> Negative Create new order
@@ -141,5 +142,7 @@ public class NegativeCheckoutCreateOrderFRTest extends BaseTest {
 		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
 		myAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

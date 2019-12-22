@@ -14,6 +14,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to cart test
@@ -69,5 +70,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
 		myBagPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.EmailPreferencePage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -66,5 +67,7 @@ public class EmailPreferencesUKTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		emailPreferencesPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

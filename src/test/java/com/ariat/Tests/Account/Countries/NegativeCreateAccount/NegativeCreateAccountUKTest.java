@@ -13,6 +13,7 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 
@@ -103,5 +104,7 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

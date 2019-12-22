@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test order status from different type of navigation
@@ -65,5 +66,8 @@ public class OrderStatusDETest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
+	
 }

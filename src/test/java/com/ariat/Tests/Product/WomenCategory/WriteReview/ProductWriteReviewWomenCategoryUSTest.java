@@ -18,6 +18,7 @@ import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Men Category test write review on Glove product
@@ -101,5 +102,7 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 		womenAccessoriesGlovesPage.quit();
 		gloveProductPage.quit();
 		rebarTopProductPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

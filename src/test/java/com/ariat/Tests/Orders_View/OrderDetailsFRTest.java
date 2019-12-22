@@ -1,6 +1,7 @@
 package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
@@ -86,5 +87,15 @@ public class OrderDetailsFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageTopNavFR();
 		logger.info("Finishing orders check information orders test.");
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		homePage.quit();
+		homePageUK.quit();
+		homePageFR.quit();
+		signInPage.quit();
+		myAccountPage.quit();
+		myOrdersPage.quit();
 	}
 }
