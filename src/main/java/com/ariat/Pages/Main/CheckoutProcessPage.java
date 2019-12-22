@@ -58,22 +58,26 @@ public class CheckoutProcessPage extends BasePage {
 	private By confirmPayPal = By.id("confirmButtonTop");
 	private By nextBtnPayPal = By.id("btnNext");
 	private By loginPayPal = By.id("btnLogin");
-	private By arrowAddress = By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
 	private By addressLocator = By.xpath("//span[contains(text(), '1el1r - Basarabia Blvd, No 62')]");
 	private By arrowSelectAddress = By.cssSelector(".el-icon-arrow-up");
 	private By addressOption = By.xpath("//span[contains(text(), '0ndEy - Avenue, 5th')]");
+	 private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
 
-	public void selectAddress() {
-		WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
-		WebDriverUtils.clickOnElementWithWait(driver, addressLocator);
-	}
-
+	
 	public void selectAddressUS() {
 		WebDriverUtils.clickOnElementWithWait(driver, arrowSelectAddress);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addressOption);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
+
+	
+
+		
+		public void selectAddress() {
+			WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
+			WebDriverUtils.clickOnElementWithWait(driver, addressLocator);
+		}
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);

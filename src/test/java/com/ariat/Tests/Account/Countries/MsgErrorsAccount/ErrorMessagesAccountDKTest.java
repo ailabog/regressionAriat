@@ -65,7 +65,7 @@ public class ErrorMessagesAccountDKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	/*@Test(priority = 0)
+	@Test(priority = 0)
 	public void errorsAccountTest() {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
@@ -74,25 +74,18 @@ public class ErrorMessagesAccountDKTest extends BaseTest {
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		signInPage = homePageDK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
-		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastName(LAST_NAME);
-		createAccountPage.selectBirthMonth(BIRTH_MONTH);
-		createAccountPage.selectBirthDay(BIRTH_DAY);
-		//createAccountPage.GenderFemale();
-		createAccountPage.enterEmail(EMAIL);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, null, null, null);
 		createAccountPage.assertWrongEmailCreateAccount(INVALID_EMAIL_MSG);
 		createAccountPage.clearEmail();
-		createAccountPage.enterEmail("aila.bogasieru@ariat.com");
+		createAccountPage.createAccount(null, null, null, null, "aila.bogasieru@ariat.com", "aila.bogasieru@ariat.com", null, null);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.assertWrongConfirmEmailCreateAccount(INVALID_EMAIL_MSG);
 		createAccountPage.clearEmail();
-		createAccountPage.enterEmail("aila.bogasieru@ariat.com");
-		createAccountPage.enterPassword(PASSWORD);
-		createAccountPage.confirmPassword(PASSWORD);
+		createAccountPage.createAccount(null, null, null, null, "aila.bogasieru@ariat.com", "aila.bogasieru@ariat.com", PASSWORD, PASSWORD);
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongPassCreateAccount(INVALID_PASS_MSG, INVALID_PASS_MSG);
 		logger.info("Finishing error messages in creating new account test...");
-	}*/
+	}
 
 	@Test(priority = 1)
 	public void returningCustomerWrongPasswordTest() {
