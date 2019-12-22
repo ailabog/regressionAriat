@@ -13,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test Order details from different type of navigation and checks values from
@@ -97,5 +98,7 @@ public class OrderDetailsUSTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

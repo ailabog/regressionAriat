@@ -58,6 +58,7 @@ public class ProductNegativeAddToCartWomenCategoryDETest extends BaseTest {
 		womenFootwearRidingPage=womenFootwearPage.returnWomenFootwearRidingCategoryPage();
 		heritageProductPage.selectAttributeCalf("Slim");
 		myBagPage = heritageProductPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove negative add to cart test.");
 	}
 	

@@ -1,4 +1,4 @@
-package com.ariat.Tests.Ad+dresses.Countries.MakeDefaultAddress;
+package com.ariat.Tests.Addresses.Countries.MakeDefaultAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;

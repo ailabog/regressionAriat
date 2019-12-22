@@ -84,7 +84,7 @@ public class Add_MakeDefaultCreditCardDKTest extends BaseTest{
 		paymentInfoPage.quit();
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
-		kill.killChrome();s
+		kill.killChrome();
 		
 	}
 }
