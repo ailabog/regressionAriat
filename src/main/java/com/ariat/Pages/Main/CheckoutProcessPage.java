@@ -341,6 +341,44 @@ public class CheckoutProcessPage extends BasePage {
 		// driver.switchTo().window(winHandleBefore);
 		// Continue with original browser (first window)
 	}
+	
+
+	public void setDetailsPayPal(String emailValue, String passwordValue) {
+			logger.info("Entering email..");
+			String winHandleBefore = driver.getWindowHandle();
+			// Perform the click operation that opens new window
+			// Switch to new window opened
+			for (String winHandle : driver.getWindowHandles()) {
+				driver.switchTo().window(winHandle);
+			}
+			// Perform the actions on new window
+			// WebDriverUtils.findElement(driver, window);
+			WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			// driver.close();
+			// Switch back to original browser (first window)
+			// driver.switchTo().window(winHandleBefore);
+			// Continue with original browser (first window)
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, nextBtnPayPal);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
+			logger.info("Confirm paypal payment into PayPal Account..");
+			//String winHandleBefore = driver.getWindowHandle();
+			// Perform the click operation that opens new window
+			// Switch to new window opened
+			//for (String winHandle : driver.getWindowHandles()) {
+			//	driver.switchTo().window(winHandle);
+			//}
+			WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			// driver.close();
+			// Switch back to original browser (first window)
+			// driver.switchTo().window(winHandleBefore);
+			// Continue with original browser (first window)
+	}
 
 	public void nextBtnPayPal() {
 		WebDriverUtils.clickOnElementWithWait(driver, nextBtnPayPal);

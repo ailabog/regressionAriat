@@ -39,7 +39,8 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By nameText = By.cssSelector(".checkout__card-name .el-input__inner");
 	private By cardNo = By.cssSelector(".checkout__card-number .el-input__inner");
 	private By cardNoUS = By.xpath("//input[@id='c-cardnumber']");
-	private By klarnaBtn = By.cssSelector(".payment-method__KLARNA > .el-radio__label");
+	//private By klarnaBtn = By.cssSelector(".payment-method__KLARNA > .el-radio__label");
+	private By klarnaBtn = By.xpath("//[@class='el-radio payment-method-radio payment-method__KLARNA']");
 	private By sofortBtn = By.cssSelector(".payment-method__SOFORT > .el-radio__label");
 	private By giropayBtn = By.cssSelector(".payment-method__GIROPAY > .el-radio__label");
 	private By payPalBtn = By.xpath("//span[text()='Paypal']");
@@ -71,9 +72,10 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		switch (optionMethod) {
 		case "Klarna":
 			logger.info("Choosing Klarna..");
-			WebDriverUtils.scroll500Down(driver, klarnaBtn);
+			WebDriverUtils.scroll150(driver, klarnaBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, klarnaBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			
 			break;
 
 		case "Sofort":

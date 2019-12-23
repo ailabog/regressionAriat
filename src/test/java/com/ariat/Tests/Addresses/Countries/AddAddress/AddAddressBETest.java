@@ -55,7 +55,7 @@ public class AddAddressBETest extends BaseTest {
 
 	@Test
 	public void addAddressBETest() {
-		logger.info("Starting add address Denmark test");
+		logger.info("Starting add address Belgium test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -67,7 +67,7 @@ public class AddAddressBETest extends BaseTest {
 		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Belgium", POST_CODE, PHONE, ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		//addressesPage.checkAddress(ADDRESS_ID);
-		logger.info("Finishing add address Denmark test");
+		logger.info("Finishing add address Belgium test");
 	}
 	
 	@AfterTest

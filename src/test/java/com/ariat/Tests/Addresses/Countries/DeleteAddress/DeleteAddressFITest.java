@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageBE;
 import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddAddressesPage;
@@ -54,8 +55,25 @@ public class DeleteAddressFITest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
-	public void deleteAddressFITest() {
+	@Test(priority=0)
+	public void addAddressSETest() {
+		logger.info("Starting add address Finland test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Belgium", POST_CODE, PHONE, ADDRESS_ID);
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
+		addressesPage.checkAddress(ADDRESS_ID);
+		logger.info("Finishing add address Finland test");
+	}
+
+	@Test(priority = 1)
+	public void deleteAddressTestBE() {
 		logger.info("Starting deleting address Finland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -65,28 +83,12 @@ public class DeleteAddressFITest extends BaseTest {
 		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
-		addressesPage.checkAddress("nnn");
+		addressesPage.deleteAddressCreatedNo(ADDRESS_ID);
+		addressesPage.deleteAddressCreatedYes(ADDRESS_ID);
+		addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing deleting address Finland test");
 	}
 
-	@Test(priority = 1)
-	public void deleteAddressFromEditFITest() {
-		logger.info("Starting deleting address from Edit address Finland test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
-		signInPage = homePageFI.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("ccc");
-		logger.info("Finishing deleting address from Edit address Finland test");
-	}
 
 	@AfterTest
 	public void tearDown() {

@@ -1,6 +1,8 @@
 package com.ariat.Tests.Addresses.Countries.EditAddress;
 
 
+import org.junit.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
@@ -51,7 +53,7 @@ public class EditAddressDKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	/*@Test
+	@Test
 	public void editAddressDKTest() {
 		logger.info("Starting edit address Denmark test");
 		homePage = new HomePage(new ChromeDriver());
@@ -65,11 +67,11 @@ public class EditAddressDKTest extends BaseTest {
 		addressesPage.editAddressCreated("B1TGL");
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
-		addAddressPage.enterAddressId("B1TGL1");
+		//addAddressPage.enterAddressId("B1TGL1");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address Denmark test");
-	}*/
+	}
 	
 	@AfterTest
 	public void tearDown() {

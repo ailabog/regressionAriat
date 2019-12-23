@@ -61,7 +61,7 @@ public class AddAddressFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "France", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
 		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Belgium", POST_CODE, PHONE, ADDRESS_ID);

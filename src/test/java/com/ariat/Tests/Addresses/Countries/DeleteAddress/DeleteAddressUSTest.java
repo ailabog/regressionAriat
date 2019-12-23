@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.PhoneUS;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
@@ -37,6 +38,7 @@ public class DeleteAddressUSTest extends BaseTest {
 	private AddressesPage addressesPage;
 	private Environments environment;
 	private EUCountries euCountry;
+	private PhoneUS phoneUS;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
@@ -52,37 +54,37 @@ public class DeleteAddressUSTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
-	public void deleteAddressUSTest() {
+	@Test(priority=0)
+	public void addAddressUSTest() {
+		logger.info("Starting add address US test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage.setDetailsAddressUS("A", "B", "Avenue, 5th", CITY, "Arizona", POST_CODE, phoneUS.phone1.getNumber(), ADDRESS_ID);
+		addressesPage = addAddressPage.returnAddressesPageUseOriginal();
+	    addressesPage.checkAddress(ADDRESS_ID);
+		logger.info("Finishing add address US test");
+	}
+	
+	@Test(priority=1)
+	public void deleteAddressTestUS() {
 		logger.info("Starting deleting address US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		//addressesPage.checkAddress("nnn");
+		addressesPage.deleteAddressCreatedNo(ADDRESS_ID);
+		addressesPage.deleteAddressCreatedYes(ADDRESS_ID);
 		logger.info("Finishing deleting address US test");
-	}
-
-	@Test(priority = 1)
-	public void deleteAddressFromEditUSTest() {
-		logger.info("Starting deleting address from Edit address US test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		//addressesPage.checkAddress("ccc");
-		logger.info("Finishing deleting address from Edit address US test");
 	}
 
 	@AfterTest

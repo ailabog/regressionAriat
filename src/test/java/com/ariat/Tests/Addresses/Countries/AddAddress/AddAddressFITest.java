@@ -57,7 +57,7 @@ public class AddAddressFITest extends BaseTest {
 
 	@Test
 	public void addAddressIETest() {
-		logger.info("Starting add address Ireland test");
+		logger.info("Starting add address Finland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -69,7 +69,7 @@ public class AddAddressFITest extends BaseTest {
 		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Belgium", POST_CODE, PHONE, ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		addressesPage.checkAddress(ADDRESS_ID);
-		logger.info("Finishing add address Ireland test");
+		logger.info("Finishing add address Finland test");
 	}
 	
 	@AfterTest

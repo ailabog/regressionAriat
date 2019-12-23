@@ -31,7 +31,7 @@ public class AddAddressesPage extends BasePage {
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
 	private By saveAddressButton =By.name("dwfrm_profile_address_create");
 	private By saveAddressButtonFR =By.xpath("//button[@value='Appliquer']");
-	 private By saveAddressButtonDE = By.xpath("//button[@value='Anwenden']");
+	private By saveAddressButtonDE = By.xpath("//button[@value='Anwenden']");
 	private By saveAddressEditButton = By.xpath("//*[@value='Apply']");
 	private By saveAddressEditButtonDE = By.xpath("//*[@value='Anwenden']");
 	private By saveAddressEditButtonFR = By.xpath("//*[@value='Appliquer']");
@@ -44,7 +44,7 @@ public class AddAddressesPage extends BasePage {
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
     private By missingFieldsText=By.xpath("//*contains[text(),'This field is required.']");
-   
+    private By useOriginalBtn = By.name("dwfrm_addForm_useOrig");
   		
 	public AddAddressesPage(WebDriver driver) {
 		super(driver);
@@ -86,6 +86,14 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, phoneTextBox, phone);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
+	}
+	
+	public AddressesPage returnAddressesPageUseOriginal() {
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
+		WebDriverUtils.clickOnElementWithWait(driver, useOriginalBtn);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
 	}
 	
 	public void clearAddressId() {

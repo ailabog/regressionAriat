@@ -81,7 +81,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.selectAddress();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
+		/*paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
 		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
@@ -92,7 +92,8 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		checkoutProcessCompletePage.scrollContinueSofort();
 		checkoutProcessCompletePage.continueSofortBE();
 		checkoutProcessCompletePage.enterTransactionId("12345");
-		checkoutProcessCompletePage.continueSofortBE();
+		checkoutProcessCompletePage.continueSofortBE();*/
+		checkoutProcessCompletePage.setDetailsSofort("Demo","88888888", "1234", "12345");
 		logger.info("Finishing checkout -> Create new order customer Sofort test.");
 	}
 

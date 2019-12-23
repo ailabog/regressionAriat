@@ -80,11 +80,12 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
-		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
+		/*checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
 		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.clickConfirmPayPal();
+		checkoutProcessPage.clickConfirmPayPal();*/
+		checkoutProcessPage.setDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	} 

@@ -36,18 +36,17 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By pressPayPalCheckout = By.xpath("//iframe[@class='zoid-component-frame zoid-visible']");
 	private By ibanSofortField = By.name("data[BankCode][search]");
 	private By bankNameField = By.id("BankCodeSearch");
-	private By continueSofortBtn = By.xpath("//button[text()='Weiter']");
+	private By continueSofortBtnDE = By.xpath("//button[text()='Weiter']");
 	private By userIdSofortield = By.name("data[BackendForm][LOGINNAME__USER_ID]");
 	private By pinSofortField = By.id("BackendFormUSERPIN");
 	private By checkBankAccountSofort = By.name("data[MultipaysSession][sender_account_number_technical]");
 	private By transactionSofortField = By.id("BackendFormTAN");
 	private By transactionSofortFieldDE = By.id("BackendFormTan");
 	private By bankNameGiropayFiled = By.id("tags");
-	private By continueSofortBE = By.xpath("//button[text()='Next']");
+	private By continueSofortBtn = By.xpath("//button[text()='Next']");
 	private By ingIcon = By.xpath("//button[@class='grid-button-ideal-INGBNL2A']");
 	private By openSelectionIdeal = By.xpath("//span[text()='Open']");
 	private By IdealfinishBtn = By.xpath("//button[contains(text(),'Ga verder')]");
-	
 	
 
 	protected CheckoutProcessCompletePage(WebDriver driver) {
@@ -132,14 +131,53 @@ public class CheckoutProcessCompletePage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	public void continueSofortBE() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBE);
+	public void continueSofortDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtnDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void enterBankSofort(String bankName) {
 		WebDriverUtils.enterTextBox(driver, bankNameField, bankName);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	
+	public void setDetailsSofort(String bankName, String userIdValue, String pinValue, String transactionId) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	    WebDriverUtils.enterTextBox(driver, bankNameField, bankName);
+	    WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	    WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
+	    WebDriverUtils.enterTextBox(driver, userIdSofortield, userIdValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, pinSofortField, pinValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);	
+		WebDriverUtils.clickOnElementWithWait(driver, checkBankAccountSofort);
+		WebDriverUtils.scroll300(driver, continueSofortBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
+		WebDriverUtils.enterTextBox(driver, transactionSofortField, transactionId);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
+	}
+	
+	public void setDetailsSofortDE(String bankName, String userIdValue, String pinValue, String transactionId) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	    WebDriverUtils.enterTextBox(driver, bankNameField, bankName);
+	    WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	    WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
+	    WebDriverUtils.enterTextBox(driver, userIdSofortield, userIdValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, pinSofortField, pinValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);	
+		WebDriverUtils.clickOnElementWithWait(driver, checkBankAccountSofort);
+		WebDriverUtils.scroll300(driver, continueSofortBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtnDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtnDE);
+		WebDriverUtils.enterTextBox(driver, transactionSofortField, transactionId);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
 	}
 	
 	public void enterValuesId(String userIdValue, String pinValue) {

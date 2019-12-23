@@ -89,14 +89,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
-		checkoutProcessCompletePage.continueSofortBE();
-		checkoutProcessCompletePage.enterValuesId("88888888", "1234");
-		checkoutProcessCompletePage.continueSofortBE();
-		checkoutProcessCompletePage.checkBankAccount();
-		checkoutProcessCompletePage.scrollContinueSofort();
-		checkoutProcessCompletePage.continueSofortBE();
-		checkoutProcessCompletePage.enterTransactionId("12345");
-		checkoutProcessCompletePage.continueSofortBE();
+		checkoutProcessCompletePage.setDetailsSofort("Demo","88888888", "1234", "12345");
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
 	}
 	
