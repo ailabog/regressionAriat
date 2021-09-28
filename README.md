@@ -17,4 +17,4 @@ Who to talk to ?
 
 Aila Bogasieru
 Email: 
-aila.bogasieru@ariat.com/aila.bogasieru@gmail.com
+aila.bogasieru@gmail.com
